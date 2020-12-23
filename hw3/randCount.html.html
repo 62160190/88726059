@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random</title>
+    <h3>RandomNumber</h3>
+    <script>
+        function random() {
+            let x = document.querySelector('#x')
+            let result = document.querySelector('#result')
+
+            result.innerHTML = ''
+
+            let numbers = []
+            for (let i = 0; i < parseInt(x.value); i++) {
+                rn = Math.floor(Math.random() * 100)
+                numbers.push(rn)
+            }
+
+            numbers.sort((a, b) => a - b)
+
+            
+
+            let count = 1
+            let table = ``
+
+            for (let i = 1; i <= numbers.length; i++) {
+                if (numbers[i] == numbers[i - 1]) {
+                    count++
+                }
+                else {
+                    table += `<tr>
+                                <td>${numbers[i - 1]}</td>
+                                <td>${count}</td>
+                            </tr>`
+                    count = 1
+                }
+            }
+
+            result.innerHTML = table
+        }
+    </script>
+</head>
+<body>
+    <input type="text" placeholder="Numbers is" id="x">
+    <button onclick="random()"class="open">ClickRandom</button>
+    <style type="text/css">
+        .open {
+            background-color: rgb(150, 241, 150);
+        }
+    </style>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Numbers</th>
+                <th>Ramdom</th>
+            </tr>
+        </thead>
+
+        <tbody id="result">
+
+        </tbody>
+    </table>
+</body>
+
+</html>

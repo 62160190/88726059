@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<p>โปรแกรม บวกสะสม - sum.html</p>
+    
+<script>
+    function summary(){
+          sum = document.getElementById('sum').innerHTML=""
+          number1 = document.getElementById('x');
+          number2 = document.getElementById('y');
+          sum = document.getElementById('sum');
+          var c = 0;
+          
+    for ( let i = parseInt(number1.value);i<=parseInt(number2.value);i++) {
+        c = c+i;
+
+        sum.innerHTML +=i
+        if(i<parseInt(number2.value)){
+            
+            sum.innerHTML += "+"
+        }
+        if(i==parseInt(number2.value)){
+            sum.innerHTML += "="
+            sum.innerHTML += c
+        }
+    }
+}
+</script>
+<body>
+            <input type="text" placeholder="ใส่ตัวเลข" id="x"> -  
+            <input type="text" placeholder="ใส่ตัวเลข" id="y">
+            <button onclick="summary()">คำนวณ</button>
+            <div id="sum"></div>
+            
+</body>
+</html>

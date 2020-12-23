@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>เครื่องคิดเลข</title>
+    
+    </head>
+
+    <body>
+        <br><h1>โปรแกรม Calculator</h1>
+
+    <input tuye="text" placeholder="Num1" id="number1">
+    <td>
+        <select name="mark" id="rn">
+        <option value ="1">+</option>
+        <option value ="2">-</option>
+        <option value ="3">*</option>
+        <option value ="4">/</option>
+        </select>
+    </td>
+    <input tuye="text" placeholder="Num2" id="number2">
+    <button onclick="as()">=</button>
+    <div id="result"></div>
+
+
+<script>
+    
+    function as(){
+        num1=document.getElementById('number1');
+        num2=document.getElementById('number2');
+
+        result=document.getElementById('result');
+        rn=document.getElementById('rn');
+
+            if(parseInt(rn.value) == 1){
+                result.textContent = parseInt(num1.value) + parseInt(num2.value)
+            }if(parseInt(rn.value) == 2){
+                result.textContent = parseInt(num1.value) - parseInt(num2.value)
+            }if(parseInt(rn.value) == 3){
+                result.textContent = parseInt(num1.value) * parseInt(num2.value)
+            }if(parseInt(rn.value) == 4){
+                result.textContent = parseInt(num1.value) / parseInt(num2.value)
+            }
+    }
+</script>
+    </body>
+    </html>

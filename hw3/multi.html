@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรแกรมสูตรคูณ</title>
+    <h3>โปรแกรมสูตรคูณ - multi.html</h3>
+    <script>
+        function multi(n) {
+                div = document.getElementById('disp')
+                div.innerHTML = ''
+                table = `` 
+    
+                for (i = 1; i <= 12; i++) {
+                    table += `<tr>
+                                <td>${n} x ${i}  </td>
+                                <td> = </td>
+                                <td>${n*i} </td>
+                            </tr>`
+                    
+            }
+            div.innerHTML = table
+        }
+       
+    </script>
+</head>
+<body align="left"><br>
+    <input type="text" placeholder="สูตรคูณแม่ ?" onkeyup="multi(this.value);">
+    <table CellSpacing= "10px">
+        <tbody id="disp">
+        
+        </tbody>
+    
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Searchsong</title>
+</head>
+
+        
+<div id="Toey" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#TTT" data-slide-to="0" class="active"></li>
+      <li data-target="#TTT" data-slide-to="1"></li>
+      <li data-target="#TTT" data-slide-to="2"></li>
+      <li data-target="#TTT" data-slide-to="3"></li>
+      <li data-target="#TTT" data-slide-to="4"></li>
+    </ol>
+
+<center>
+<div class="w3-content" style="max-width:900px;position:relative">
+    <div class="carousel-inner">
+
+    <img class="mySlides" src="images/p1.jpg" style="width:50%">
+    <img class="mySlides" src="images/p2.jpg" style="width:50%">
+    <img class="mySlides" src="images/p3.jpg" style="width:50%">
+    <img class="mySlides" src="images/p4.jpg" style="width:50%">
+    <img class="mySlides" src="images/p5.jpg" style="width:50%">
+    
+    <div class="w3-section">
+    <button class="w3-btn-floating noselection w3-display-topleft w3-hover-dark-grey" style="position:absolute;top:45%;left:0" onclick="plusDivs(-1)">❮</button>
+    <button class="w3-btn-floating noselection w3-display-topleft w3-hover-dark-grey" style="position:absolute;top:45%;right:0" onclick="plusDivs(1)">❯</button>
+        </div>
+    </div>
+    </center>
+    <br>
+<body>
+    <p><font size="6">ค้นหาเพลง</font> [ <a href="newsong.html"><font size="4">เพิ่มเพลง</a></font> ]</p>
+</body>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+    showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    x[slideIndex-1].style.display = "block";
+}
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 3000); // Change image every 2 seconds
+}
+</script>
+
+<boby>
+    <form class="form-inline" onsubmit="return search();" autocomplete="off"></form>
+    <input type="text" class="form-control" placeholder="ชื่อเพลง" id="search">
+    <br>
+    <button onclick="search();" class="btn btn-outline-success">ค้นหา</button>
+    </form>
+    
+    <div id="disp"></div>
+
+<script>
+var songs = JSON.parse(localStorage.getItem("songs"))
+    if(songs == null){ 
+      localStorage.setItem("songs",songs)
+      songs = [];
+    }
+
+   function nl2br(str , is_xhtml){
+       var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+       return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+   }
+
+   function search(){
+        txt = document.getElementById('search').value;
+        disp = document.getElementById('disp');
+        disp.innerHTML = "";
+        html = "";
+        cnt = 0;
+        for(i = 0;i < songs.length;i++){
+        if(songs[i][0].indexOf(txt) >= 0){
+          cnt++;
+          html += `
+          <div class="card">
+              <div class="card-body">
+              <h4 class="card-title">เพลง ${songs[i][0]}</h4>
+              <h4 class="card-title">ศิลปิน ${songs[i][1]}</h4>
+              <p class="card-text">${nl2br(songs[i][2])}</p>
+              </div>
+          </div>`;
+        }
+    }
+        if(cnt == 0){
+          disp.innerHTML = `
+          <div class="alert alert-danger">
+          <strong>ไม่พบเพลง </strong>${txt}
+          </div>`;
+        }else{
+          document.getElementById("disp").innerHTML = `
+          <div class="alert alert-success">
+            <strong>พบ</strong>${cnt} เพลง
+          </div>`;
+          document.getElementById("disp").innerHTML += html;
+        }
+        return false;
+
+    }
+   
+</script> 
+</boby>
+</div>
+</html>

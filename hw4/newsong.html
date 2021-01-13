@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Add Song</title>
+</head>
+
+        <div id="Toey" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#Toey" data-slide-to="0" class="active"></li>
+              <li data-target="#Toey" data-slide-to="1"></li>
+              <li data-target="#Toey" data-slide-to="2"></li>
+              <li data-target="#Toey" data-slide-to="3"></li>
+              <li data-target="#Toey" data-slide-to="4"></li>
+            </ol>
+
+<center>
+        <div class="w3-content" style="max-width:900px;position:relative">
+            <div class="carousel-inner">
+
+            <img class="mySlides" src="images/p1.jpg" style="width:50%">
+            <img class="mySlides" src="images/p2.jpg" style="width:50%">
+            <img class="mySlides" src="images/p3.jpg" style="width:50%">
+            <img class="mySlides" src="images/p4.jpg" style="width:50%">
+            <img class="mySlides" src="images/p5.jpg" style="width:50%">
+            
+            <div class="w3-section">
+            <button class="w3-btn-floating noselection w3-display-topleft w3-hover-dark-grey" style="position:absolute;top:45%;left:0" onclick="plusDivs(-1)">❮</button>
+            <button class="w3-btn-floating noselection w3-display-topleft w3-hover-dark-grey" style="position:absolute;top:45%;right:0" onclick="plusDivs(1)">❯</button>
+                </div>
+            </div>
+            </center>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+    showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    x[slideIndex-1].style.display = "block";
+}
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 3000); // Change image every 2 seconds
+}
+</script>
+
+<body>
+    <p><font size="6">Add new song</font> [ <a href="searchsong.html"><font size="4">ค้นหาเพลง</a></font> ]</p>
+</body>
+
+<body>
+    <form class="form-inline" onsubmit="return addsong();" autocomplete="off"></form>
+    <input type="text" class="form-control" placeholder="ชื่อเพลง" id="addsong"><br>
+    <input type="text" class="form-control" placeholder="ศิลปิน" id="artist"><br>
+    <textarea class="form-control" id="lyrics" placeholder="เนื้อเพลง" cols="30" rows="10"></textarea><br>
+    <button onclick="addsong();" class="btn btn-outline-success">Save</button>
+    <button onclick="Clear();" class="btn btn-outline-success" type="reset" value="reset" >Clear</button>
+
+
+
+<script>
+    function addsong(){
+        songs = localStorage.getItem('songs');
+        if(songs === 'null'){
+            songs = [];
+            
+        }else{
+            songs = JSON.parse(songs);
+        }
+        data = [
+            namesong = document.getElementById('addsong').value,
+            artist = document.getElementById('artist').value,
+            lyrics = document.getElementById('lyrics').value
+        ];
+            songs.push(data);
+        
+        localStorage.setItem('songs',JSON.stringify(songs));
+        document.getElementById('addsong').value =''
+        document.getElementById('artist').value =''
+        document.getElementById('lyrics').value =''
+
+    }
+    
+    function Clear() {
+        document.getElementById('addsong').value =''
+        document.getElementById('artist').value =''
+        document.getElementById('lyrics').value =''
+    }
+</script>
+</body>
+</div>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Money</title>
+    <script>
+        function convert(){
+    var num = document.getElementById("number").value;
+    div = document.getElementById('show')
+
+    table = ''
+    var arr1 = [1000,500,100,50,20];
+    var arr2 = [10, 5, 2, 1];
+    for (var i=0; i<arr1.length; i++) {
+        r0 = num / arr1[i];
+        num = num % arr1[i];     
+    
+        if (parseInt(r0) > 0) {
+        table += `<tr>
+             <td ><b>แบงค์ ${arr1[i]} : ${parseInt(r0)} ใบ</td>         
+         </tr>`  
+        }
+        
+        else{
+        table += `<tr>
+            <td><b>แบงค์ ${arr1[i]} : </td>         
+        </tr>`
+        }
+    }
+    for (var i=0; i<arr2.length; i++) {
+        r0 = num / arr2[i];
+        num = num % arr2[i];     
+    
+        if (parseInt(r0) > 0) {
+        table += `<tr>
+             <td><b>เหรียญ ${arr2[i]} : ${parseInt(r0)} เหรียญ</td>         
+         </tr>`  
+        }
+        else{
+        table += `<tr>
+            <td><b>เหรียญ ${arr2[i]} : </td>         
+        </tr>`
+        }
+    }
+
+    div.innerHTML = table
+
+}
+</script>
+</head>
+<body>
+    <center>
+    <input type="text" id="number">
+    <button onclick="convert()">convert</button>
+    <table>
+       <tbody id="show">
+    </tbody> 
+    </table>
+    </center>
+    
+</body>
+</html>

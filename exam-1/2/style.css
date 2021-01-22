@@ -1,0 +1,43 @@
+html, body {
+    background-color: rgb(168, 160, 160);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+p.item {
+    padding: 14px;
+    display: inline-block;
+    font-size: 30px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.main {
+    max-width: 700px;
+    margin: auto;
+}
+
+.box {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    margin: 30px;
+}
+
+.profile  {
+    width: 100%;
+}
+
+#title {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 50px;
+}
+
+p {
+    font-family: 'Farsan', cursive;
+    font-size: 25px;
+}
+

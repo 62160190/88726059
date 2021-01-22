@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรเเกรมคิดภาษีรถยนต์</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <p class="title">ในการคิดภาษีรถยนต์ จะพิจารณาจากรุ่นของรถ (เป็นรถปี ค.ศ. ใด) เเละ ซีซีของเครื่องยนต์ (ยิ่งเครื่องยนต์ใหญ่ก็ยิ่งจ่ายภาษีเเพง) 
+            กำหนดตารางการคิดภาษีรถยนต์ดังนี้</p>
+    </div>
+<div class="main">
+    <div class="box">
+        <center><table border="1">
+            <tr>
+                <th>รุ่นปี ค.ศ.</th>
+                <th>ขนาดเครื่องยนต์</th>
+                <th>ภาษี</th>
+            </tr>
+            <tr>
+                <td>ปี ค.ศ. 1990 หรือเก่ากว่า</td>
+                <td>1500 cc. หรือต่ำกว่า</td>
+                <td>1250</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>เกิน 1500 cc. เเต่ไม่เกิน 2000 cc.</td>
+                <td>1400</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>เกิน 2000 cc. ขึ้นไป</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td>ปี ค.ศ. 1991 - 1999</td>
+                <td>1500 cc. หรือต่ำกว่า</td>
+                <td>1100</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>เกิน 1500 cc. เเต่ไม่เกิน 2000 cc.</td>
+                <td>1300</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>เกิน 2000 cc. ขึ้นไป</td>
+                <td>1700</td>
+            </tr>
+            <tr>
+                <td>ตั้งเเต่ปี ค.ศ. 2000 เป็นต้นไป</td>
+                <td>1500 cc. หรือต่ำกว่า</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>เกิน 1500 cc. เเต่ไม่เกิน 2000 cc.</td>
+                <td>1200</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>เกิน 2000 cc. ขึ้นไป</td>
+                <td>1500</td>
+            </tr>
+        </table></center>
+    </div>
+</div>
+    
+    <h4 class="title">โปรเเกรมคิดภาษีรถยนต์</h4>
+    <center><input class="content" type="text" id="year" placeholder="เป็นรถปี ค.ศ. ใด"></center>
+    <center><input type="text" id="cc" placeholder="ซีซีของเครื่องยนต์"></center>
+    <center><button id="run">คำนวณ</button></center>
+    <center><div id="output"></div></center>
+    <script src="index.js"></script>
+</body>
+</html>

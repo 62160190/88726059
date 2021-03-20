@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <b>ผู้แต่ง</b>
+    <hr>
+
+    <span id="show"></span>
+
+    <script>
+
+        var http_request = new XMLHttpRequest();
+        http_request.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var authors = JSON.parse(this.responseText);
+                console.log(authors);
+                show(authors);
+            }
+        };
+        http_request.open("GET", "get_authors.php", true);
+        http_request.send();
+        
+        function show(authors){
+
+            var content = "";
+            var i;
+            for(i = 0; i<authors.length; i++) {
+                content += 'รหัส: ' + authors[i].authorID + "<br>";
+                content += 'ชื่อ: ' + authors[i].author + "<br>";
+                content += 'นามปากกา: ' + authors[i].penname + "<br>";
+                content += '<a href="del_author.php?authorID=' + authors[i].authorID + '"><button>Delete</button></a><br>';
+                content += '<hr>';
+            }
+
+            document.getElementById("show").innerHTML = content;
+        }
+
+    </script>
+
+    
+
+
+</body>
+</html>

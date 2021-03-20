@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX-4</title>
+
+</head>
+<body>
+
+    <b>ผู้แต่ง</b>
+    <hr>
+
+    <span id="show"></span>
+
+    <script>
+        var httprequest = new XMLHttpRequest();
+        httprequest.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var authors = JSON.parse(this.responseText);
+                console.log(authors);
+                show(authors);
+            }
+        };
+
+        httprequest.open("GET", "authors.php", true);
+        httprequest.send();
+        
+        function show(authors){
+            var data = "";
+            var i;
+            
+            for(i = 0; i<authors.length; i++) {
+                data += 'รหัส: ' + authors[i].authorID + "<br>";
+                data += 'ชื่อ: ' + authors[i].author + "<br>";
+                data += 'นามปากกา: ' + authors[i].penname + "<br><hr>";
+            }
+
+            document.getElementById("show").innerHTML = data;
+            
+        }
+
+    </script>
+
+</body>
+</html>

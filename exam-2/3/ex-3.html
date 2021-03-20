@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX-3</title>
+
+    <script>
+
+        var authors = [];
+        function save(){
+
+            var id = document.getElementById("authorID").value;
+            var name = document.getElementById("authorName").value;
+            var penname = document.getElementById("penName").value;
+
+            var getAuthor = {authorID: id, author: name, penname: penname};
+            authors.push(getAuthor);
+
+            localStorage.setItem("authors", JSON.stringify(authors));
+            show();
+
+            document.getElementById("authorID").value = "";
+            document.getElementById("authorName").value = "";
+            document.getElementById("penName").value = "";
+
+            document.getElementById("authorID").focus();
+        }
+
+        function show(){
+            var getAuthor = JSON.parse(localStorage.getItem('authors'));
+            console.log(getAuthor);            
+            var content = '';
+            for(i = 0; i<getAuthor.length; i++) {
+                data += 'รหัส: ' + getAuthor[i].authorID + "<br>";
+                data += 'ชื่อ: ' + getAuthor[i].author + "<br>";
+                data += 'นามปากกา: ' + getAuthor[i].penname + "<br><hr>";
+            }
+            document.getElementById("result").innerHTML = data;
+        }
+
+    </script>
+
+</head>
+<body>
+    
+    <form>
+        <b>ผู้แต่ง</b>
+        <hr>
+
+        รหัสผู้แต่ง<br>
+        <input type="text" id="authorID" ><br>
+        
+        ชื่อผู้แต่ง<br>
+        <input type="text" id="authorName" ><br>
+        
+        นามปากกา<br>
+        <input type="text" id="penName" ><br>
+
+        <input type="button" value="Save" onclick="save()">
+        
+    </form>
+
+    <hr>
+
+    <span id="result"></span>
+
+    <script>
+        show();
+    </script>
+
+</body>
+</html>

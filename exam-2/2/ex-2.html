@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX-2</title>
+</head>
+<body>
+
+    <b>ผู้แต่ง</b>
+    <hr>
+
+    <span id="data"></span>
+
+    <script>
+
+var authors = [{
+			authorID: 1111,
+			author: 'wittawas',
+			penname: 'witty100'
+		},
+		{
+			authorID: 1112,
+			author: 'jakkarin',
+			penname: 'พ่อบ้านใจกล้า'
+		},
+		{
+			authorID: 1113,
+			author: 'worawit',
+			penname: 'obob'
+		}
+	];
+
+        // add
+        var new_data = { authorID: 1114,
+                         author: 'surachai',
+                         penname: 'jummumboy'};
+                         
+        authors.push(new_data);
+
+        function show(authors){
+
+            var content = "";
+            var i;
+            for(i = 0; i<authors.length; i++) {
+                content += 'รหัส: ' + authors[i].authorID + "<br>";
+                content += 'ชื่อ: ' + authors[i].author + "<br>";
+                content += 'นามปากกา: ' + authors[i].penname + "<br><hr>";
+            }
+
+            document.getElementById("data").innerHTML = content;
+        }
+
+        show(authors);
+
+    </script>
+
+
+</body>
+</html>

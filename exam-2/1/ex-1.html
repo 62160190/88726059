@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX-1</title>
+</head>
+<body>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <table>
+        <tr>
+            <td>ผู้แต่ง
+                <hr>
+            </td>
+        </tr>
+    
+        <tbody id="Table">
+    
+        </tbody>
+    </table>
+    
+    <script>
+        var authors = [{
+                authorID: 1111,
+                author: 'wittawas',
+                penname: 'witty100'
+            },
+            {
+                authorID: 1112,
+                author: 'jakkarin',
+                penname: 'พ่อบ้านใจกล้า'
+            },
+            {
+                authorID: 1113,
+                author: 'worawit',
+                penname: 'obob'
+            }
+        ];
+    
+        show(authors)
+    
+        function show(data) {
+            var table = document.getElementById('Table')
+    
+            for (var i = 0; i < data.length; i++) {
+                var row = `<tr>
+                            <tr>
+                                <td>รหัส: ${data[i].authorID}</td>
+                            </tr>
+                            <tr>
+                                <td>ชื่อ: ${data[i].author}</td>
+                            </tr>
+                            <tr>
+                                <td>นามปากกา: ${data[i].penname}<hr></td>
+                            </tr>
+                          </tr>`
+                table.innerHTML += row
+            }
+        }
+    </script>
+    
+</body>
+</html>

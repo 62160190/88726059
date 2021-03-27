@@ -1,0 +1,272 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700,300);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700);
+/* line 6, ../sass/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 27, ../sass/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 31, ../sass/_reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 34, ../sass/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 37, ../sass/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 40, ../sass/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 45, ../sass/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 12, ../sass/main.scss */
+.clear {
+  clear: both;
+}
+
+/* line 16, ../sass/main.scss */
+.container {
+  width: 1070px;
+  margin: 0 auto;
+}
+
+/* line 21, ../sass/main.scss */
+.container2 {
+  width: 900px;
+  margin: 0 auto;
+}
+
+/* line 26, ../sass/main.scss */
+nav {
+  width: 100%;
+}
+/* line 28, ../sass/main.scss */
+nav .logo {
+  float: left;
+}
+/* line 30, ../sass/main.scss */
+nav .logo h1 {
+  text-indent: -10000px;
+  width: 119px;
+  height: 23px;
+  margin: 70px 0px;
+}
+/* line 39, ../sass/main.scss */
+nav ul.menu {
+  float: right;
+  margin-top: 75px;
+  font-family: 'Playfair Display', serif;
+}
+/* line 43, ../sass/main.scss */
+nav ul.menu li {
+  float: left;
+  margin-left: 120px;
+}
+/* line 46, ../sass/main.scss */
+nav ul.menu li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #626262;
+  transition: .3s ease;
+  padding-bottom: 10px;
+  border-bottom: 2px solid transparent;
+  font-size: 20px;
+}
+/* line 54, ../sass/main.scss */
+nav ul.menu li a:hover {
+  border-bottom: 2px solid #626262;
+}
+/* line 60, ../sass/main.scss */
+nav img {
+  width: 100%;
+  clear: both;
+  margin-bottom: 100px;
+}
+
+/* line 67, ../sass/main.scss */
+section.textbox {
+  font-family: 'Playfair Display', serif;
+}
+/* line 70, ../sass/main.scss */
+section.textbox article span {
+  font-family: 'Ubuntu', sans-serif;
+  text-transform: uppercase;
+  color: #b4ad9e;
+}
+/* line 76, ../sass/main.scss */
+section.textbox article h1 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 30px;
+  color: #626262;
+}
+/* line 82, ../sass/main.scss */
+section.textbox article p {
+  color: #626262;
+  margin-bottom: 50px;
+}
+
+/* line 90, ../sass/main.scss */
+section.item .box-item {
+  padding-top: 100px;
+  width: 43.75%;
+  float: left;
+  margin-left: 50px;
+  position: relative;
+  overflow: hidden;
+  left: -50px;
+}
+/* line 98, ../sass/main.scss */
+section.item .box-item img {
+  width: 100%;
+  margin-bottom: 30px;
+}
+/* line 102, ../sass/main.scss */
+section.item .box-item span {
+  font-family: 'Ubuntu', sans-serif;
+  text-transform: uppercase;
+  color: #b4ad9e;
+}
+/* line 107, ../sass/main.scss */
+section.item .box-item h1 {
+  margin-top: 30px;
+  color: #626262;
+  font-size: 30px;
+}
+/* line 112, ../sass/main.scss */
+section.item .box-item p {
+  margin-top: 30px;
+  color: #626262;
+}
+
+/* line 120, ../sass/main.scss */
+section.news {
+  text-align: center;
+  width: 100%;
+  height: 285px;
+  margin-top: 120px;
+  background-color: #f0f0f0;
+}
+/* line 126, ../sass/main.scss */
+section.news h1 {
+  font-size: 30px;
+  padding-top: 75px;
+  color: #333333;
+}
+/* line 131, ../sass/main.scss */
+section.news input {
+  margin-top: 80px;
+  background: none;
+  width: 300px;
+  border: none;
+  border-bottom: 2px solid #333333;
+  padding-bottom: 5px;
+  color: #626262;
+}
+/* line 140, ../sass/main.scss */
+section.news button {
+  border: none;
+  background: none;
+  margin-left: -4px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #333333;
+}
+
+/* line 151, ../sass/main.scss */
+div.loadbox {
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  margin-left: -25px;
+}
+/* line 156, ../sass/main.scss */
+div.loadbox button.loadmore {
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  border: none;
+  background: none;
+  font-size: 20px;
+  border: 2px solid #333333;
+  padding: 15px;
+  transition: 1s ease;
+}
+/* line 167, ../sass/main.scss */
+div.loadbox button.loadmore:hover {
+  border: 2px solid #333333;
+  background: #333333;
+  color: #f0f0f0;
+}
+
+/* line 174, ../sass/main.scss */
+footer {
+  font-family: 'Playfair Display', serif;
+  background: #f0f0f0;
+  height: 100px;
+  overflow: hidden;
+}
+/* line 179, ../sass/main.scss */
+footer ul.info1 {
+  padding: 47px;
+  float: left;
+}
+/* line 182, ../sass/main.scss */
+footer ul.info1 li {
+  margin-left: 15px;
+  float: left;
+}
+/* line 188, ../sass/main.scss */
+footer ul.info2 {
+  padding: 47px;
+  float: right;
+}
+/* line 191, ../sass/main.scss */
+footer ul.info2 li {
+  margin-left: 15px;
+  float: left;
+}
+/* line 194, ../sass/main.scss */
+footer ul.info2 li a {
+  color: #333333;
+}
